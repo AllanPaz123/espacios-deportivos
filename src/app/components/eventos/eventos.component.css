@@ -1,0 +1,55 @@
+body {
+    font-family: sans-serif;
+    color: #333;
+  }
+  
+  .container {
+    width: 95%;
+    margin: 20px auto;
+  }
+  
+  h2 {
+    color: #dc3545; /* Rojo para el título */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para la tabla */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table thead {
+    background-color: #dc3545; /* Rojo para el encabezado */
+    color: white;
+  }
+  
+  .table th {
+    font-weight: bold;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #ffcccc; /* Rojo claro para filas pares */
+  }
+  
+  .table tbody tr:nth-child(odd) {
+    background-color: #ffe6e6; /* Rojo aún más claro para filas impares */
+  }
+  
+  /* Estilos para la imagen */
+  .evento-img {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: contain; /* Ajusta la imagen al contenedor */
+    display: block;
+    margin: 0 auto;
+  }

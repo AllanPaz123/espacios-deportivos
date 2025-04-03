@@ -1,0 +1,39 @@
+<div class="container">
+    <h2>Gestión de Espacios Deportivos</h2>
+    
+    <!-- Formulario para agregar un nuevo espacio -->
+    <form (ngSubmit)="agregarEspacio()" #espacioForm="ngForm">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="nuevoEspacio.nombre" name="nombre" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="tipo_deporte" class="form-label">Tipo de Deporte</label>
+        <input type="text" class="form-control" id="tipo_deporte" [(ngModel)]="nuevoEspacio.tipo_deporte" name="tipo_deporte">
+      </div>
+  
+      <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <textarea class="form-control" id="descripcion" [(ngModel)]="nuevoEspacio.descripcion" name="descripcion"></textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label for="ubicacion" class="form-label">Ubicación</label>
+        <input type="text" class="form-control" id="ubicacion" [(ngModel)]="nuevoEspacio.ubicacion" name="ubicacion">
+      </div>
+  
+      <div class="mb-3">
+        <label for="capacidad" class="form-label">Capacidad</label>
+        <input type="number" class="form-control" id="capacidad" [(ngModel)]="nuevoEspacio.capacidad" name="capacidad">
+      </div>
+  
+      <div class="mb-3">
+        <label for="imagen" class="form-label">URL de Imagen</label>
+        <input type="text" class="form-control" id="imagen" [(ngModel)]="nuevoEspacio.imagen" name="imagen">
+      </div>
+  
+      <button type="submit" class="btn btn-success">Agregar Espacio</button>
+      <button type="button" class="btn btn-primary ms-2" (click)="verEspacios()">Ver Espacios</button>
+    </form>
+  </div>

@@ -1,0 +1,81 @@
+<div class="container mt-4">
+    <h2 class="text-center">Detalles de Inscripciones</h2>
+  
+    <!-- Campo de Búsqueda -->
+    <div class="mb-3">
+      <input type="text" class="form-control" [(ngModel)]="busqueda" placeholder="Buscar por usuario o evento..." (input)="filtrarInscripciones()">
+    </div>
+    
+  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre del Usuario</th>
+          <th>Evento</th>
+          <th>Fecha de Inscripción</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let inscripcion of inscripcionesFiltradas">
+          <td>{{ inscripcion.usuario_nombre }}</td>
+          <td>{{ inscripcion.evento_nombre }}</td>
+          <td>{{ inscripcion.fecha_inscripcion | date:'dd/MM/yyyy HH:mm' }}</td>
+          <td>
+            <select [(ngModel)]="inscripcion.estado" class="form-control">
+              <option value="inscrito">Inscrito</option>
+              <option value="cancelado">Cancelado</option>
+            </select>
+          </td>
+          <td>
+            <button class="btn btn-primary btn-sm me-2" (click)="editarInscripcion(inscripcion)">Guardar</button>
+            <button class="btn btn-danger btn-sm" (click)="eliminarInscripcion(inscripcion.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="text-center">
+        <button class="btn btn-secondary" (click)="volver()">Volver</button>
+      </div>
+   
+  </div>
+  
+
+
+<!--<div class="container mt-4">
+    <h2 class="text-center">Detalles de Inscripciones</h2>
+    
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre del Usuario</th>
+          <th>Evento</th>
+          <th>Fecha de Inscripción</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let inscripcion of inscripciones">
+          <td>{{ inscripcion.usuario_nombre }}</td>
+          <td>{{ inscripcion.evento_nombre }}</td>
+          <td>{{ inscripcion.fecha_inscripcion | date:'dd/MM/yyyy HH:mm' }}</td>
+          <td>
+            <select [(ngModel)]="inscripcion.estado" class="form-control">
+              <option value="inscrito">Inscrito</option>
+              <option value="cancelado">Cancelado</option>
+            </select>
+          </td>
+          <td>
+            <button class="btn btn-primary btn-sm me-2" (click)="editarInscripcion(inscripcion)">Guardar</button>
+            <button class="btn btn-danger btn-sm" (click)="eliminarInscripcion(inscripcion.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div class="text-center">
+      <button class="btn btn-secondary" (click)="volver()">Volver</button>
+    </div>
+  </div>  -->

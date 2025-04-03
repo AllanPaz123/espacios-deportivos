@@ -1,0 +1,53 @@
+<div class="container mt-4">
+  <h2 class="text-center">Lista de Reservas</h2>
+  <div class="mb-3">
+    <input type="text" class="form-control" [(ngModel)]="filtroGeneral" (input)="filtrarReservas()" placeholder="Buscar reservas por usuario, evento o ubicación">
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Usuario</th>
+        <th>Ubicación</th> 
+        <th>Espacio</th>
+        <th>Evento</th>
+        <th>Fecha de Reserva</th>
+        <th>Fecha Inicio del Evento</th> <!-- Nueva columna -->
+        <th>Imagen Evento</th> <!-- Nueva columna -->
+        <th>Imagen Espacio</th> <!-- Nueva columna -->
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reserva of reservasFiltradas">
+        <td>{{ reserva.usuario_nombre }}</td>
+        <td>{{ reserva.evento_ubicacion || reserva.espacio_ubicacion }}</td> 
+        <td>{{ reserva.espacio_nombre }}</td>
+        <td>{{ reserva.evento_nombre }}</td>
+        <td>{{ reserva.fecha | date:'dd/MM/yyyy HH:mm' }}</td>
+        <td>{{ reserva.fecha_inicio ? (reserva.fecha_inicio | date:'dd/MM/yyyy HH:mm') : '-' }}</td> 
+        <td>
+          <img *ngIf="reserva.imagen_evento" [src]="reserva.imagen_evento" alt="Imagen Evento" class="img-thumbnail" width="100">
+        </td>
+        <td>
+          <img *ngIf="reserva.imagen_espacio" [src]="reserva.imagen_espacio" alt="Imagen Espacio" class="img-thumbnail" width="100">
+        </td>
+        <td>
+          <select [(ngModel)]="reserva.estado" class="form-control">
+            <option value="pendiente">Pendiente</option>
+            <option value="confirmada">Confirmada</option>
+            <option value="cancelada">Cancelada</option>
+          </select>
+        </td>
+        <td>
+          <button class="btn btn-primary btn-sm me-2" (click)="editarReserva(reserva)">Guardar</button>
+          <button class="btn btn-danger btn-sm" (click)="eliminarReserva(reserva.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="text-center">
+    <button class="btn btn-secondary" (click)="volver()">Volver</button>
+  </div>
+</div>

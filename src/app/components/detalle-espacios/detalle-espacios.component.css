@@ -1,0 +1,95 @@
+
+/* Estilos generales */
+body {
+  font-family: sans-serif;
+  color: #333;
+}
+
+.container {
+  width: 95%;
+  margin: 20px auto;
+}
+
+h2 {
+  color: #dc3545; /* Rojo para el título */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos para la tabla */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table thead {
+  background-color: #dc3545; /* Rojo para el encabezado */
+  color: white;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #ffcccc; /* Rojo claro para filas pares */
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #ffe6e6; /* Rojo aún más claro para filas impares */
+}
+
+/* Estilos para la imagen */
+.table img {
+  max-width: 50px;
+  max-height: 50px;
+  object-fit: contain;
+}
+
+/* Estilos para los botones */
+.btn-warning {
+  background-color: #ffc107; /* Amarillo para el botón "Editar" */
+  color: black;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-warning:hover {
+  background-color: #ffca2c; /* Amarillo más oscuro al pasar el ratón */
+}
+
+.btn-danger {
+  background-color: #dc3545; /* Rojo para el botón "Eliminar" */
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  background-color: #c82333; /* Rojo más oscuro al pasar el ratón */
+}
+
+.btn-secondary {
+  background-color: #6c757d; /* Gris para el botón "Volver" */
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268; /* Gris más oscuro al pasar el ratón */
+}

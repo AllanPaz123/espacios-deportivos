@@ -1,0 +1,73 @@
+/* Estilos generales */
+body {
+  font-family: sans-serif;
+  color: #333;
+}
+
+h2 {
+  color: #dc3545; /* Rojo para el título */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+input[type="tel"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  background-color: #dc3545; /* Rojo para el botón "Registrar" */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px; /* Separación entre botones */
+}
+
+button[type="submit"]:hover {
+  background-color: #c82333; /* Rojo más oscuro al pasar el ratón */
+}
+
+/* Estilos para el botón "Volver" */
+button:not([type="submit"]) {
+  background-color: #6c757d; /* Gris para el botón "Volver" */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:not([type="submit"]):hover {
+  background-color: #5a6268; /* Gris más oscuro al pasar el ratón */
+}
+
+/* Estilos para los errores de validación */
+input.ng-invalid.ng-touched {
+  border-color: #dc3545; /* Rojo para los campos inválidos */
+}
