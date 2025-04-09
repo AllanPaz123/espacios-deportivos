@@ -1,39 +1,27 @@
-<!-- <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Nombre del Usuario</th>
-        <th>Evento</th>
-        <th>Fecha de Inscripción</th>
-        <th>Estado</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let inscripcion of inscripciones">
-        <td>{{ inscripcion.usuario_nombre }}</td>
-        <td>{{ inscripcion.evento_nombre }}</td>
-        <td>{{ inscripcion.fecha_inscripcion | date:'dd/MM/yyyy HH:mm' }}</td>
-        <td>{{ inscripcion.estado }}</td>
-      </tr>
-    </tbody>
-  </table>
--->
+<div class="login-wrapper">
+  <div class="login-box">
+    <h2>Inscripción a Evento</h2>
+    <form class="formulario" (ngSubmit)="inscribirUsuario()">
 
-  <form (ngSubmit)="inscribirUsuario()">
-    <div class="form-group">
-      <label>Usuario:</label>
-      <select class="form-control" [(ngModel)]="inscripcion.usuario_id" name="usuario_id" required>
-        <option *ngFor="let usuario of usuarios" [value]="usuario.id">{{ usuario.nombre }}</option>
-      </select>
-    </div>
-  
-    <div class="form-group">
-      <label>Evento:</label>
-      <select class="form-control" [(ngModel)]="inscripcion.evento_id" name="evento_id" required>
-        <option *ngFor="let evento of eventos" [value]="evento.id">{{ evento.nombre }}</option>
-      </select>
-    </div>
-  
-    <button type="submit" class="btn btn-primary">Inscribirse</button>
-    <button class="btn btn-info" routerLink="/detalle-inscripcion" style="margin-left: 20px;">Ver Inscripciones</button>
-  </form>
-  
+      <div class="input-container">
+        <i class="fa fa-user"></i>
+        <select [(ngModel)]="inscripcion.usuario_id" name="usuario_id" required>
+          <option value="" disabled selected>Seleccione un usuario</option>
+          <option *ngFor="let usuario of usuarios" [value]="usuario.id">{{ usuario.nombre }}</option>
+        </select>
+      </div>
+
+      <div class="input-container">
+        <i class="fa fa-calendar-check"></i>
+        <select [(ngModel)]="inscripcion.evento_id" name="evento_id" required>
+          <option value="" disabled selected>Seleccione un evento</option>
+          <option *ngFor="let evento of eventos" [value]="evento.id">{{ evento.nombre }}</option>
+        </select>
+      </div>
+
+      <button type="submit" class="login-btn">Inscribirse</button>
+      <button type="button" class="login-btn secondary-btn" routerLink="/detalle-inscripcion">Ver Inscripciones</button>
+    </form>
+  </div>
+</div>
+

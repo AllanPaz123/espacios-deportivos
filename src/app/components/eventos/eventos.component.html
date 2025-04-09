@@ -1,6 +1,7 @@
-<div class="container">
-    <h2>Lista de Eventos</h2>
-    <table class="table">
+<div class="fondo-pagina">
+  <div class="container mt-5 contenido-central">
+    <h2 class="titulo-principal">Lista de Eventos</h2>
+    <table class="table tabla-eventos">
       <thead>
         <tr>
           <th>Nombre</th>
@@ -21,9 +22,11 @@
           <td>{{ evento.ubicacion }}</td>
           <td>{{ evento.capacidad }}</td>
           <td>
-            <img *ngIf="evento.imagen" [src]="evento.imagen" alt="Evento" style="height: 200px; width: 200px;" class="evento-img"/>
+            <img *ngIf="evento.imagen" [src]="evento.imagen" alt="Evento" class="evento-img"/>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
+</div>
+

@@ -1,55 +1,63 @@
-body {
-    font-family: sans-serif;
-    color: #333;
-  }
-  
-  .container {
-    width: 95%;
-    margin: 20px auto;
-  }
-  
-  h2 {
-    color: #dc3545; /* Rojo para el título */
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Estilos para la tabla */
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  .table th,
-  .table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .table thead {
-    background-color: #dc3545; /* Rojo para el encabezado */
-    color: white;
-  }
-  
-  .table th {
-    font-weight: bold;
-  }
-  
-  .table tbody tr:nth-child(even) {
-    background-color: #ffcccc; /* Rojo claro para filas pares */
-  }
-  
-  .table tbody tr:nth-child(odd) {
-    background-color: #ffe6e6; /* Rojo aún más claro para filas impares */
-  }
-  
-  /* Estilos para la imagen */
-  .evento-img {
-    max-width: 200px;
-    max-height: 200px;
-    object-fit: contain; /* Ajusta la imagen al contenedor */
-    display: block;
-    margin: 0 auto;
-  }
+.fondo-pagina {
+  min-height: 100vh;
+  background: linear-gradient(to right, #cf283c, #f04f61);
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 30px;
+}
+
+.contenido-central {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Título */
+.titulo-principal {
+  text-align: center;
+  font-weight: bold;
+  color: #cf283c;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+/* Tabla */
+.tabla-eventos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-eventos thead {
+  background-color: #cf283c;
+  color: white;
+}
+
+.tabla-eventos th,
+.tabla-eventos td {
+  padding: 12px;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-eventos tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Imagen */
+.evento-img {
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.evento-img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+

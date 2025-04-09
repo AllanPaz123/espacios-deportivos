@@ -8,7 +8,7 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://192.168.0.108:5000/auth'; // Endpoint del backend
+  private apiUrl = 'http://192.168.101.9:3000/auth'; // Endpoint del backend
   private authState = new BehaviorSubject<boolean>(this.isAuthenticated());
 
   http = inject(HttpClient);

@@ -15,7 +15,7 @@ export interface Evento {
   providedIn: 'root'
 })
 export class DataService {
-  private apiUrl = 'http://192.168.0.108:5000';
+  private apiUrl = 'http://192.168.101.9:3000';
 
   constructor(private http: HttpClient) {}
 
