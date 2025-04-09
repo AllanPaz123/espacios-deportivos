@@ -16,7 +16,8 @@ import { NavbarComponent } from '../navbar/navbar.component';
 export class EventosComponent implements OnInit {
    
   eventos: Evento[] = []; // Aquí se guardarán los eventos obtenidos del backend
-
+  eventosFiltrados: Evento[] = [];
+  filtroGeneral: string = '';
    constructor(private dataService: DataService, private router: Router) {}
 
    ngOnInit(): void {
@@ -24,10 +25,28 @@ export class EventosComponent implements OnInit {
     this.dataService.getEventos().subscribe(
       (data) => {
         this.eventos = data; // Asignar los datos obtenidos a la variable 'eventos'
+        this.eventosFiltrados = data; // Inicializar eventosFiltrados con todos los eventos
       },
       (error) => {
         console.error('Error al obtener los eventos:', error);
       }
     );
+
   }
+  
+  filtrarEventos(): void {
+    const filtro = this.filtroGeneral.toLowerCase().trim();
+  
+    this.eventosFiltrados = this.eventos.filter(evento =>
+      evento.nombre.toLowerCase().includes(filtro) ||
+      (evento.descripcion?.toLowerCase().includes(filtro) ?? false) ||
+      (evento.ubicacion?.toLowerCase().includes(filtro) ?? false)
+    );
+  }
+
+
+  volverAFormulario(): void {
+    this.router.navigate(['/eventosinsc']);
+  }
+  
 }

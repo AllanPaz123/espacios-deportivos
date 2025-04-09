@@ -1,0 +1,30 @@
+
+<app-navbar></app-navbar>
+<div class="form-container">
+    <h2>Inscripción de Evento</h2>
+  
+    <form (ngSubmit)="insertarEvento()">
+      <label>Evento:</label>
+      <input type="text" [(ngModel)]="nuevoEvento.nombre" name="nombre" required />
+  
+      <label>Descripción:</label>
+      <textarea [(ngModel)]="nuevoEvento.descripcion" name="descripcion"></textarea>
+  
+      <label>Fecha de inicio:</label>
+      <input type="datetime-local" [(ngModel)]="nuevoEvento.fecha_inicio" name="fecha_inicio" required />
+  
+      <label>Fecha de fin:</label>
+      <input type="datetime-local" [(ngModel)]="nuevoEvento.fecha_fin" name="fecha_fin" required />
+  
+      <label>Ubicación:</label>
+      <input type="text" [(ngModel)]="nuevoEvento.ubicacion" name="ubicacion" />
+  
+      <label>Capacidad:</label>
+      <input type="number" [(ngModel)]="nuevoEvento.capacidad" name="capacidad" />
+  
+      <label>Imagen (URL):</label>
+      <input type="text" [(ngModel)]="nuevoEvento.imagen" name="imagen" />
+  
+      <button type="submit">Insertar</button>
+      <button type="button" (click)="irAEventos()">Ver Eventos</button>
+    </form>

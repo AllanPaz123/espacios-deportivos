@@ -15,13 +15,16 @@ export interface Evento {
   providedIn: 'root'
 })
 export class DataService {
-  private apiUrl = 'http://192.168.107.24:5000';
+  private apiUrl = 'http://192.168.0.109:5000';
 
   constructor(private http: HttpClient) {}
 
    // Método para obtener los eventos
    getEventos(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/eventos`);
+  }
+  insertarEvento(evento: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/eventos`, evento);
   }
 
   getInscripciones(): Observable<any[]> {
