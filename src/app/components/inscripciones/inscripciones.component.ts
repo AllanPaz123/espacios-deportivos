@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Router } from '@angular/router';
+import { NavbarComponent } from '../navbar/navbar.component';
 @Component({
   selector: 'app-inscripciones',
   standalone: true,
   providers: [DataService],
-  imports: [FormsModule, CommonModule, HttpClientModule, RouterModule],
+  imports: [FormsModule, CommonModule, HttpClientModule, RouterModule, NavbarComponent],
   templateUrl: './inscripciones.component.html',
   styleUrl: './inscripciones.component.css'
 })

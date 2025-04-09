@@ -4,11 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Router } from '@angular/router';
-
+import { NavbarComponent } from '../navbar/navbar.component';
 @Component({
   selector: 'app-eventos',
   standalone: true,
-  imports: [FormsModule, CommonModule, HttpClientModule, RouterModule],
+  imports: [FormsModule, CommonModule, HttpClientModule, RouterModule, NavbarComponent],
   templateUrl: './eventos.component.html',
   styleUrl: './eventos.component.css',
   providers: [DataService]
