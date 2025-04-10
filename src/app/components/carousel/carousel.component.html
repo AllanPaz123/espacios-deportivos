@@ -1,0 +1,25 @@
+<div class="carousel">
+    <div class="carousel-track" [style.transform]="'translateX(-' + (currentIndex * 100) + '%)'">
+      <div class="hero">
+        <div *ngFor="let image of images" class="slide">
+          <picture>
+            <source [srcset]="image.large" media="(min-width: 1025px)">
+            <source [srcset]="image.medium" media="(min-width: 768px)">
+            <img [src]="image.small" [alt]="image.alt" class="slide-image">
+          </picture>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Controles de navegación -->
+    <button class="carousel-button prev" (click)="prevSlide()">‹</button>
+    <button class="carousel-button next" (click)="nextSlide()">›</button>
+    
+    <!-- Indicadores -->
+    <div class="indicators">
+      <span *ngFor="let img of images; let i = index" 
+            [class.active]="i === currentIndex"
+            (click)="goToSlide(i)">
+      </span>
+    </div>
+  </div>

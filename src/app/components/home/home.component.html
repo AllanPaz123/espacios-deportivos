@@ -1,17 +1,18 @@
- 
-<app-navbar></app-navbar>
- <router-outlet></router-outlet>
-
-  <nav>
-    <button routerLink="/eventosinsc">eventos</button>
-    <button routerLink="/inscripciones">inscripciones</button>
-    <button routerLink="/espacios">espacios</button>
-    <button routerLink="/reservas">reservas</button>
-  </nav>
+<div class="main-container">
+  <app-navbar></app-navbar>
   
-  <hr>
-
-
-  <!--
--->
-  
+  <div class="content-wrapper">
+    <router-outlet></router-outlet>
+    
+    <nav class="main-nav">
+      <button routerLink="/eventosinsc">EVENTOS</button>
+      <button routerLink="/inscripciones">INSCRIPCIONES</button>
+      <button routerLink="/espacios">ESPACIOS</button>
+      <button routerLink="/reservas">RESERVAS</button>
+    </nav>
+    
+    <div class="carousel-container">
+      <app-carousel></app-carousel>
+    </div>
+  </div>
+</div>

@@ -5,17 +5,18 @@
       
       <div class="input-container">
         <i class="fa fa-user"></i>
-        <input formControlName="correo" type="email" placeholder="username" required>
+        <input formControlName="correo" type="email" placeholder="email" required>
       </div>
 
       <div class="input-container">
         <i class="fa fa-lock"></i>
-        <input formControlName="contrasena" type="password" placeholder="password" required>
+        <input formControlName="contrasena" type="password" placeholder="Contraseña" required>
       </div>
 
       <a class="forgot" href="#">Olvidaste tu contraseña?</a>
 
       <button type="submit" class="login-btn">Iniciar Sesión</button>
+      <button class="login-btn" (click)="goToRegister()">Registrarse</button>
     </form>
   </div>
 </div>

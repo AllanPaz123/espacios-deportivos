@@ -1,30 +1,51 @@
-
 <app-navbar></app-navbar>
-<div class="form-container">
-    <h2>Inscripción de Evento</h2>
-  
-    <form (ngSubmit)="insertarEvento()">
-      <label>Evento:</label>
-      <input type="text" [(ngModel)]="nuevoEvento.nombre" name="nombre" required />
-  
-      <label>Descripción:</label>
-      <textarea [(ngModel)]="nuevoEvento.descripcion" name="descripcion"></textarea>
-  
-      <label>Fecha de inicio:</label>
-      <input type="datetime-local" [(ngModel)]="nuevoEvento.fecha_inicio" name="fecha_inicio" required />
-  
-      <label>Fecha de fin:</label>
-      <input type="datetime-local" [(ngModel)]="nuevoEvento.fecha_fin" name="fecha_fin" required />
-  
-      <label>Ubicación:</label>
-      <input type="text" [(ngModel)]="nuevoEvento.ubicacion" name="ubicacion" />
-  
-      <label>Capacidad:</label>
-      <input type="number" [(ngModel)]="nuevoEvento.capacidad" name="capacidad" />
-  
-      <label>Imagen (URL):</label>
-      <input type="text" [(ngModel)]="nuevoEvento.imagen" name="imagen" />
-  
-      <button type="submit">Insertar</button>
-      <button type="button" (click)="irAEventos()">Ver Eventos</button>
-    </form>
+<div class="evento-container">
+  <h2> Inscripción de Evento</h2>
+
+  <form (ngSubmit)="insertarEvento()">
+    <div class="mb-3">
+      <i class="fas fa-tag"></i>
+      <label class="form-label">Evento</label>
+      <input type="text" class="form-control" [(ngModel)]="nuevoEvento.nombre" name="nombre" required />
+    </div>
+
+    <div class="mb-3">
+      <i class="fas fa-align-left"></i>
+      <label class="form-label">Descripción</label>
+      <textarea class="form-control" [(ngModel)]="nuevoEvento.descripcion" name="descripcion"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <i class="fas fa-play-circle"></i>
+      <label class="form-label">Fecha de inicio</label>
+      <input type="datetime-local" class="form-control" [(ngModel)]="nuevoEvento.fecha_inicio" name="fecha_inicio" required />
+    </div>
+
+    <div class="mb-3">
+      <i class="fas fa-stop-circle"></i>
+      <label class="form-label">Fecha de fin</label>
+      <input type="datetime-local" class="form-control" [(ngModel)]="nuevoEvento.fecha_fin" name="fecha_fin" required />
+    </div>
+
+    <div class="mb-3">
+      <i class="fas fa-map-marker-alt"></i>
+      <label class="form-label">Ubicación</label>
+      <input type="text" class="form-control" [(ngModel)]="nuevoEvento.ubicacion" name="ubicacion" />
+    </div>
+
+    <div class="mb-3">
+      <i class="fas fa-users"></i>
+      <label class="form-label">Capacidad</label>
+      <input type="number" class="form-control" [(ngModel)]="nuevoEvento.capacidad" name="capacidad" />
+    </div>
+
+    <div class="mb-3">
+      <i class="fas fa-image"></i>
+      <label class="form-label">Imagen (URL)</label>
+      <input type="text" class="form-control" [(ngModel)]="nuevoEvento.imagen" name="imagen" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Insertar</button>
+    <button type="button" class="btn btn-primary ms-2" (click)="irAEventos()">Ver Eventos</button>
+  </form>
+</div>

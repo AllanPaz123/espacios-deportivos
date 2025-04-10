@@ -5,11 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Router } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { AuthService } from '../../services/auth.service';
+import { CarouselComponent } from '../carousel/carousel.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [FormsModule, CommonModule, HttpClientModule, RouterModule, NavbarComponent],
+  imports: [FormsModule, CommonModule, HttpClientModule, RouterModule, NavbarComponent, CarouselComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
   //providers: [DataService]
