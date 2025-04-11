@@ -1,67 +1,45 @@
-
-<div class="container mt-4">
-  <h2 class="text-center">Reservar Espacio Deportivo</h2>
-
+<app-navbar></app-navbar>
+<div class="reserva-container">
   <form (ngSubmit)="hacerReserva()">
+    <h2 class="text-center">Reservar Espacio Deportivo</h2>
+
     <div class="mb-3">
-      <label for="usuario">Usuario</label>
+      <label for="usuario" class="form-label">
+        <i class="fas fa-user"></i> Usuario
+      </label>
       <select id="usuario" class="form-control" [(ngModel)]="reserva.usuario_id" name="usuario" required>
         <option *ngFor="let usuario of usuarios" [value]="usuario.id">{{ usuario.nombre }}</option>
       </select>
     </div>
 
     <div class="mb-3">
-      <label for="espacio">Espacio Deportivo</label>
+      <label for="espacio" class="form-label">
+        <i class="fas fa-futbol"></i> Espacio Deportivo
+      </label>
       <select id="espacio" class="form-control" [(ngModel)]="reserva.espacio_id" name="espacio" required>
         <option *ngFor="let espacio of espacios" [value]="espacio.id">{{ espacio.nombre }}</option>
       </select>
     </div>
 
     <div class="mb-3">
-      <label for="evento">Evento</label>
+      <label for="evento" class="form-label">
+        <i class="fas fa-calendar-alt"></i> Evento
+      </label>
       <select id="evento" class="form-control" [(ngModel)]="reserva.evento_id" name="evento" required>
         <option *ngFor="let evento of eventos" [value]="evento.id">{{ evento.nombre }}</option>
       </select>
     </div>
 
-   
     <div class="mb-3">
-      <label for="fecha">Fecha y Hora de Reserva</label>
+      <label for="fecha" class="form-label">
+        <i class="fas fa-clock"></i> Fecha y Hora de Reserva
+      </label>
       <input type="datetime-local" id="fecha" class="form-control" [(ngModel)]="reserva.fecha" name="fecha" required>
     </div>
 
-    <button type="submit" class="btn btn-primary">Reservar</button>
-    <button type="button" class="btn btn-secondary ms-2" (click)="verReservas()">Ver Reservas</button>
+    <div class="d-flex justify-content-between">
+      <button type="submit" class="btn btn-primary"> Reservar </button>
+      <button type="button" class="btn btn-success" (click)="verReservas()"> Ver Reservas </button>
+    </div>
   </form>
 </div>
-
-
-<!--<div class="container mt-4">
-    <h2 class="text-center">Reservar Espacio Deportivo</h2>
-  
-    <form (ngSubmit)="hacerReserva()">
-      <div class="mb-3">
-        <label for="espacio">Espacio Deportivo</label>
-        <select id="espacio" class="form-control" [(ngModel)]="reserva.espacio_id" name="espacio" required>
-          <option *ngFor="let espacio of espacios" [value]="espacio.id">{{ espacio.nombre }}</option>
-        </select>
-      </div>
-  
-      <div class="mb-3">
-        <label for="evento">Evento</label>
-        <select id="evento" class="form-control" [(ngModel)]="reserva.evento_id" name="evento" required>
-          <option *ngFor="let evento of eventos" [value]="evento.id">{{ evento.nombre }}</option>
-        </select>
-      </div>
-  
-      <div class="mb-3">
-        <label for="fecha">Fecha y Hora de Reserva</label>
-        <input type="datetime-local" id="fecha" class="form-control" [(ngModel)]="reserva.fecha" name="fecha" required>
-      </div>
-  
-      <button type="submit" class="btn btn-primary">Reservar</button>
-      <button class="btn btn-secondary ms-2" (click)="verReservas()">Ver Reservas</button>
-    </form>
-  </div>
-   -->
-

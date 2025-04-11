@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Router } from '@angular/router';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-detalle-espacios',
   standalone: true,
   providers: [DataService],
-  imports: [FormsModule, CommonModule, HttpClientModule, RouterModule],
+  imports: [FormsModule, CommonModule, HttpClientModule, RouterModule, NavbarComponent],
+  // Cambia el selector a 'app-detalle-espacios' para que sea único
   templateUrl: './detalle-espacios.component.html',
   styleUrl: './detalle-espacios.component.css'
 })

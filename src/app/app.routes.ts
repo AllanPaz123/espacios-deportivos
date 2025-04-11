@@ -10,6 +10,7 @@ import { DetalleEspaciosComponent } from './components/detalle-espacios/detalle-
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { AuthGuard } from './guards/auth.guard';
+import { EventosinscComponent } from './components/eventosinsc/eventosinsc.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' }, // Redirige a login al inicio
@@ -19,6 +20,7 @@ export const routes: Routes = [
 
     // Rutas protegidas para usuarios autenticados
     { path: 'eventos', component: EventosComponent, canActivate: [AuthGuard] },
+    { path: 'eventosinsc', component: EventosinscComponent, canActivate: [AuthGuard] },
     { path: 'inscripciones', component: InscripcionesComponent, canActivate: [AuthGuard] },
     { path: 'detalle-inscripcion', component: DetalleInscripcionComponent, canActivate: [AuthGuard] },
     { path: 'reservas', component: ReservasComponent, canActivate: [AuthGuard] },

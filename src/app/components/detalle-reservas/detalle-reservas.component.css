@@ -1,67 +1,113 @@
-/* Estilos generales */
-body {
-  font-family: sans-serif;
-  color: #333;
+.fondo-pagina {
+  min-height: 100vh;
+  background: linear-gradient(to right, #cf283c, #f04f61);
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 30px;
 }
 
-.table {
+.contenido-central {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 1400px;
+}
+
+/* Título */
+.titulo-principal {
+  text-align: center;
+  font-weight: bold;
+  color: #cf283c;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+/* Tabla */
+.tabla-reservas {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
+  min-width: 1200px;
 }
 
-.table th,
-.table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-.table thead {
-  background-color: #dc3545; /* Rojo para el encabezado */
+.tabla-reservas thead {
+  background-color: #cf283c;
   color: white;
 }
 
-.table th {
+.tabla-reservas th,
+.tabla-reservas td {
+  padding: 12px;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Imágenes */
+.reserva-img {
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.reserva-img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Botones */
+.btn-accion {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-right: 5px;
   font-weight: bold;
+  cursor: pointer;
+  margin: 5px;
 }
 
-.table tbody tr:nth-child(even) {
-  background-color: #ffcccc; /* Rojo claro para filas pares */
+.btn-accion:hover {
+  background-color: #218838;
 }
 
-.table tbody tr:nth-child(odd) {
-  background-color: #ffe6e6; /* Rojo aún más claro para filas impares */
-}
-
-/* Estilos para los botones */
-.btn-primary {
-  background-color: #dc3545; /* Rojo para el botón "Guardar" */
+.btn-eliminar {
+  background-color: #dc3545;
   color: white;
-  padding: 8px 12px;
   border: none;
+  padding: 6px 10px;
   border-radius: 4px;
+  font-weight: bold;
   cursor: pointer;
 }
 
-.btn-primary:hover {
-  background-color: #c82333; /* Rojo más oscuro al pasar el ratón */
+.btn-eliminar:hover {
+  background-color: #c82333;
 }
 
-.btn-danger {
-  background-color: #dc3545; /* Rojo para el botón "Eliminar" */
+.BtnRegresar {
+  background: linear-gradient(to right, #d31027, #ea384d);
   color: white;
-  padding: 8px 12px;
   border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
   border-radius: 4px;
+  font-weight: bold;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.btn-danger:hover {
-  background-color: #c82333; /* Rojo más oscuro al pasar el ratón */
+.BtnRegresar:hover {
+  background: linear-gradient(to right, #b31217, #c3273b);
 }
 
-/* Estilos para el select de estado */
-select.form-control {
-  width: auto; /* Ajusta el ancho automáticamente */
+input.form-control {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
 }

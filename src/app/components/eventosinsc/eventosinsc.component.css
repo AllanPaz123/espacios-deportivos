@@ -1,5 +1,5 @@
-.reserva-container {
-  min-height: 88.1vh;
+.evento-container {
+  min-height: 100vh;
   background: linear-gradient(to right, #cf283c, #f04f61);
   display: flex;
   justify-content: center;
@@ -9,20 +9,7 @@
   flex-direction: column;
 }
 
-/* Título */
-.reserva-container h2 {
-  font-size: 30px;
-  text-align: center;
-  font-weight: bold;
-  color: black;
-  padding: 10px;
-  width: 100%;
-  max-width: 500px;
-  margin-bottom: 10px;
-}
-
-/* Formulario */
-.reserva-container form {
+.evento-container form {
   background-color: white;
   padding: 40px 30px;
   border-radius: 10px;
@@ -31,26 +18,38 @@
   max-width: 500px;
 }
 
-.reserva-container i {
-  color: #d31027;
+.evento-container h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: bold;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
 }
-/* Grupo de campos */
-.reserva-container .mb-3 {
+
+.evento-container h2 i {
+  color: #d31027;
+  margin-right: 10px;
+}
+
+.evento-container .mb-3 {
   margin-bottom: 20px;
 }
 
-/* Etiquetas con íconos */
-.reserva-container .form-label {
+.evento-container .mb-3 i {
+  color: #d31027;
+  margin-right: 8px;
+}
+
+.evento-container .form-label {
   font-weight: bold;
   color: black;
   font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  display: inline-block;
 }
 
-/* Inputs y select */
-.reserva-container .form-control {
+.evento-container .form-control {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
@@ -62,39 +61,35 @@
   background-color: transparent;
 }
 
-.reserva-container .form-control:focus {
+.evento-container .form-control:focus {
   border-bottom-color: #d31027;
   background-color: transparent;
 }
 
-/* Botones */
-.reserva-container .btn {
+.evento-container .btn {
   color: white;
   border: none;
-  padding: 10px 16px;
+  padding: 10px;
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 
-.reserva-container .btn-success {
+.evento-container .btn-success {
   background: linear-gradient(to right, #b31217, #c3273b);
+  color: white;
 }
 
-.reserva-container .btn-success:hover {
+.evento-container .btn-success:hover {
   background: linear-gradient(to right, #9b0f14, hsl(352, 66%, 29%));
 }
 
-.reserva-container .btn-primary {
+.evento-container .btn-primary {
   background: linear-gradient(to right, #b31217, #c3273b);
+  color: white;
 }
 
-.reserva-container .btn-primary:hover {
+.evento-container .btn-primary:hover {
   background: linear-gradient(to right, #9b0f14, hsl(352, 66%, 29%));
 }
-
-  

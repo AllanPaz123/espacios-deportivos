@@ -1,7 +1,8 @@
-<div class="container">
-    <h2>Lista de Espacios Deportivos</h2>
-     
-    <table class="table table-striped">
+<div class="fondo-pagina">
+  <div class="container mt-4 contenido-central">
+    <h2 class="titulo-principal">Lista de Espacios Deportivos</h2>
+
+    <table class="table tabla-espacios">
       <thead>
         <tr>
           <th>Nombre</th>
@@ -18,15 +19,22 @@
           <td>{{ espacio.tipo_deporte }}</td>
           <td>{{ espacio.ubicacion }}</td>
           <td>{{ espacio.capacidad }}</td>
-          <td><img [src]="espacio.imagen" alt="Imagen" width="50"></td>
           <td>
-            <button class="btn btn-warning btn-sm" (click)="editarEspacio(espacio)">Editar</button>
-            <button class="btn btn-danger btn-sm ms-2" (click)="eliminarEspacio(espacio.id)">Eliminar</button>
+            <img *ngIf="espacio.imagen" [src]="espacio.imagen" alt="Imagen" class="espacio-img" />
+          </td>
+          <td>
+            <button class="btneditar" (click)="editarEspacio(espacio)">Editar</button>
+            <button class="btneliminar" (click)="eliminarEspacio(espacio.id)">Eliminar</button>
           </td>
         </tr>
       </tbody>
     </table>
-  
-    <button class="btn btn-secondary" (click)="volver()">Volver</button>
+
+    <div class="text-center">
+      <button class="BtnRegresar" (click)="volver()">Volver</button>
+    </div>
   </div>
+</div>
+
+
   

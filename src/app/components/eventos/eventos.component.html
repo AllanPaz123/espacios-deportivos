@@ -1,9 +1,20 @@
-<div class="container">
-    <h2>Lista de Eventos</h2>
-    <table class="table">
+<app-navbar></app-navbar>
+<div class="fondo-pagina">
+  <div class="container mt-5 contenido-central">
+    <h2 class="titulo-principal">Lista de Eventos</h2>
+    <div class="mb-3">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="filtroGeneral"
+        (input)="filtrarEventos()"
+        placeholder="Buscar eventos por nombre, descripción o ubicación"
+      />
+    </div>
+    <table class="table tabla-eventos">
       <thead>
         <tr>
-          <th>Nombre</th>
+          <th>Evento</th>
           <th>Descripción</th>
           <th>Fecha Inicio</th>
           <th>Fecha Fin</th>
@@ -13,7 +24,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let evento of eventos">
+        <tr *ngFor="let evento of eventosFiltrados">
           <td>{{ evento.nombre }}</td>
           <td>{{ evento.descripcion }}</td>
           <td>{{ evento.fecha_inicio | date:'dd/MM/yyyy HH:mm' }}</td>
@@ -21,9 +32,15 @@
           <td>{{ evento.ubicacion }}</td>
           <td>{{ evento.capacidad }}</td>
           <td>
-            <img *ngIf="evento.imagen" [src]="evento.imagen" alt="Evento" style="height: 200px; width: 200px;" class="evento-img"/>
+            <img *ngIf="evento.imagen" [src]="evento.imagen" alt="Evento" class="evento-img"/>
+          </td>
+          <td>
+           
           </td>
         </tr>
       </tbody>
     </table>
+    <button class="BtnRegresar" (click)="volverAFormulario()">Volver a inscripción</button>
   </div>
+</div>
+
